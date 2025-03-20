@@ -1,0 +1,130 @@
+.about-us-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+.about-us-page-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.about-us-text-container {
+    margin-bottom: 6rem;
+}
+
+.about-us-image-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+h1 {
+    font-size: 3rem;
+    color: #e34513;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    width: auto;
+    margin-bottom: 3rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: scaleX(1.05) scaleY(1.05);
+    transition: transform 0.5s;
+    .card-header {
+        color: #e34513;
+    }
+}
+
+.about-us-page-cards-2 {
+    display: none;
+}
+
+/* Make image full width on mobile */
+@media (min-width: 768px) {
+    .about-us-page {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+        height: 100vh;
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
+    .about-us-text-container {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        padding: 2rem;
+        margin-top: 7rem;
+    }
+    .about-us-image-container {
+        max-width: 45%; /* Full width on smaller screens */
+    }
+    .about-us-page-cards {
+        display: none;
+    }
+    .about-us-page-cards-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 5rem;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        .accordion {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card {
+                display: flex;
+                width: 20rem;
+                /* margin-bottom: 3rem; */
+                margin: 3rem;
+            }
+            .card:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                transform: scaleX(1.05) scaleY(1.05);
+                transition: transform 0.5s;
+                .card-header {
+                    color: #e34513;
+                }
+            }
+        }
+    }
+}

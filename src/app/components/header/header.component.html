@@ -1,0 +1,29 @@
+<div class="d-flex d-md-none align-center text-center w-100 justify-content-between">
+    <button class="btn-logo" (click)="redirectToHome()">
+        <img class="bf-logo" src="assets/images/logo-white.png" alt="" />
+    </button>
+
+    <button class="btn-hamburguer" (click)="toggleMenu()">
+        <i class="fas fa-bars" [ngClass]="isMenuOpen ? 'hide fade-out' : 'show'"></i>
+        <i
+            class="fa-solid fa-caret-up fade-out"
+            [ngClass]="isMenuOpen ? 'show' : 'hide fade-out'"
+        ></i>
+    </button>
+    <app-dropdown
+        [menuOptions]="menuOptions"
+        [ngClass]="isMenuOpen ? 'show' : 'hide'"
+    ></app-dropdown>
+</div>
+
+<div class="d-none d-md-flex align-center text-center w-100 justify-content-between">
+    <button class="btn-logo" (click)="redirectToHome()">
+        <img class="bf-logo" src="assets/images/logo-white.png" alt="" />
+    </button>
+    @for (item of menuOptions; track item.label) {
+        <button [routerLink]="item.link" routerLinkActive="active" class="btn btn-logo">
+            {{ item.label }}
+        </button>
+    }
+    <button class="btn-empty cursor-none col-1" (click)="(true)"></button>
+</div>

@@ -1,0 +1,74 @@
+.btn-logo {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+.btn-empty {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    cursor: default;
+}
+.bf-logo {
+    width: 7rem;
+}
+.btn-hamburguer {
+    background-color: transparent;
+    display: flex;
+    width: 3rem;
+    height: auto;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: larger;
+}
+.fa-bars {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+}
+.fa-caret-up {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+}
+.fade-out {
+    transition: opacity 0.4s ease-out;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+.active {
+    border: none;
+    color: #e34513;
+}
+app-dropdown {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.4s ease-out,
+        transform 0.4s ease-out;
+}
+app-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+app-dropdown.hide {
+    opacity: 0;
+    pointer-events: none;
+}

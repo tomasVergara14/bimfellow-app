@@ -1,0 +1,7 @@
+<div class="dropdown-container d-flex flex-column justify-content-around align-center">
+    @for (option of menuOptions; track option.link) {
+        <button [routerLink]="option.link" routerLinkActive="active" class="btn btn-logo">
+            {{ option.label }}
+        </button>
+    }
+</div>

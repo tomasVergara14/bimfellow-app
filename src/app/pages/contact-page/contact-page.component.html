@@ -1,0 +1,78 @@
+<div class="checkout-container">
+    <div class="checkout-body">
+        <section class="checkout-title mt-5 mb-3">
+            <h1>Get in Touch</h1>
+            <h3>
+                We'd love to hear from you! Fill out the form below, and we'll get back to you as
+                soon as possible.
+            </h3>
+        </section>
+        <section class="checkout-form">
+            <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                <div class="form-group mb-5">
+                    <input
+                        type="text"
+                        id="name"
+                        formControlName="from_name"
+                        class="form-control"
+                        placeholder="Enter your name"
+                    />
+                    @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+                        <div>
+                            @if (contactForm.get('name')?.errors?.['required']) {
+                                <small class="text-danger ml-1"> Name is required </small>
+                            }
+                        </div>
+                    }
+                    <input
+                        type="text"
+                        id="email"
+                        formControlName="from_email"
+                        class="form-control mt-5"
+                        placeholder="Enter your email"
+                    />
+                    @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                        <div>
+                            @if (contactForm.get('email')?.errors?.['required']) {
+                                <small class="text-danger ml-1"> Email is required </small>
+                            }
+                            @if (contactForm.get('email')?.errors?.['email']) {
+                                <small class="text-danger ml-1"> Email is required </small>
+                            }
+                        </div>
+                    }
+                    <textarea
+                        id="message"
+                        formControlName="message"
+                        rows="4"
+                        cols="50"
+                        maxlength="150"
+                        class="form-control mt-5"
+                        placeholder="Enter your message..."
+                    ></textarea>
+
+                    @if (
+                        contactForm.get('message')?.invalid && contactForm.get('message')?.touched
+                    ) {
+                        <div>
+                            @if (contactForm.get('message')?.errors?.['required']) {
+                                <small class="text-danger ml-1"> Message is required </small>
+                            }
+                            @if (contactForm.get('message')?.errors?.['maxlength']) {
+                                <small class="text-danger ml-1">
+                                    Message cannot exceed 150 characters
+                                </small>
+                            }
+                        </div>
+                    }
+                </div>
+
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-contact" [disabled]="contactForm.invalid">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

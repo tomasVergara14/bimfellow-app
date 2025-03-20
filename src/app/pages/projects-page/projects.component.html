@@ -1,0 +1,21 @@
+<section class="project-page d-flex flex-column align-items-center">
+    <h1>OUR PROJECTS</h1>
+    <section class="d-flex flex-column flex-md-row justify-content-center images-container">
+        @for (project of projectsData; track project.name; let i = $index) {
+            <div class="image-box-container">
+                <div class="image-box-container-text">
+                    <h1>{{ project.name }}</h1>
+                    <p>{{ project.description }}</p>
+                </div>
+                <img [src]="project.image" [alt]="project.name" (click)="openModal(project)" />
+            </div>
+        }
+    </section>
+</section>
+<section>
+    @if (isModalOpen && projectSelected !== null) {
+        <div class="d-flex justify-content-center">
+            <project-modal [projectData]="projectSelected" (onClose)="closeModal()"></project-modal>
+        </div>
+    }
+</section>
