@@ -11,6 +11,7 @@ import {
 import { environment } from '@env/environments';
 import { env } from 'process';
 import { EmailJsService } from 'src/app/services/email-js.service';
+import { SweetalertService } from 'src/app/services/sweetalert.service';
 
 @Component({
     selector: 'page-contact-page',
@@ -25,6 +26,7 @@ import { EmailJsService } from 'src/app/services/email-js.service';
 export class ContactPageComponent {
     private fb = inject(FormBuilder);
     private emailJsService = inject(EmailJsService);
+    private sweetAlertService = inject(SweetalertService);
 
     public contactForm: FormGroup = this.fb.group({
         from_name: new FormControl('', Validators.required),
@@ -49,6 +51,8 @@ export class ContactPageComponent {
             this.contactForm.value.from_name,
             this.contactForm.value.from_email,
         );
+
+        this.sweetAlertService.triggerAlert();
 
         this.contactForm.reset();
     }

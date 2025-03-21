@@ -28,6 +28,16 @@ This approach enhances form management by providing:
 - **Reactive updates** that immediately reflect form state changes.
 - **Better scalability** by separating UI logic from form handling.
 
+## Contact Page & Email Integration
+
+The contact page is integrated with the **EmailJS** library to handle email communication. This functionality ensures:
+
+- **Automatic reply to the user** confirming that the message has been received, stating that the **BIM Fellow** team will respond as soon as possible.
+- **Email notification to the BIM Fellow team** containing the user's message, allowing for prompt follow-up and communication.
+- **SweetAlert notification** that appears after successfully sending the email and clearing the form, informing the user that their message has been sent successfully.
+
+This implementation enhances user experience by providing immediate feedback while ensuring the team is promptly notified of incoming messages.
+
 ## Image Optimization
 
 All images in the application are optimized using Angular's **`NgOptimizedImage`** directive. This ensures:
