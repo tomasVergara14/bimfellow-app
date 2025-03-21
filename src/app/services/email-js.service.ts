@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { environment } from '@env/environments';
 
 @Injectable({
     providedIn: 'root',
@@ -8,14 +9,36 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 export class EmailJsService {
     constructor() {}
 
-    sendEmailToUs() {
-        emailjs.send('bim_fellow_id', 'template_8h8jhox', {
-            to_name: 'tom', // bimfellow name
-            from_message: 'Celi', // users name
-            from_email: 'celinasa@gmail.com', // users email
-            subject: 'Testeando a ver',
-            message: 'Probando 1 Probando 2',
-            email: 'tomasvergara272@gmail.com', // bimfellow email
+    private config = environment;
+
+    async sendEmailToUs(
+        to_name: string,
+        from_name: string,
+        from_email: string,
+        subject: string,
+        message: string,
+    ) {
+        emailjs.init(this.config.PUBLIC_KEY);
+        let response = await emailjs.send(
+            this.config.SERVICE_ID,
+            this.config.NOTIFICATION_TEMPLATE_ID,
+            {
+                to_name, // bimfellow name
+                from_name, // users name
+                from_email, // users email
+                subject,
+                message,
+                email: this.config.MAIL_BIMFELLOW, // bimfellow email
+            },
+        );
+    }
+
+    async sendEmailToUser(usersName: string, userseMail: string) {
+        emailjs.init(this.config.PUBLIC_KEY);
+
+        let response = emailjs.send(this.config.SERVICE_ID, this.config.RESPONSE_TEMPLATE_ID, {
+            name: usersName,
+            email: userseMail,
         });
     }
 

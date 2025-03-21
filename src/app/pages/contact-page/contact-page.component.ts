@@ -10,6 +10,7 @@ import {
 
 import { environment } from '@env/environments';
 import { env } from 'process';
+import { EmailJsService } from 'src/app/services/email-js.service';
 
 @Component({
     selector: 'page-contact-page',
@@ -22,12 +23,9 @@ import { env } from 'process';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactPageComponent {
-    // public contactForm = new FormGroup({
-    //     name: new FormControl('', Validators.required),
-    //     email: new FormControl('', [Validators.required, Validators.email]),
-    //     message: new FormControl('', Validators.required),
-    // });
     private fb = inject(FormBuilder);
+    private emailJsService = inject(EmailJsService);
+
     public contactForm: FormGroup = this.fb.group({
         from_name: new FormControl('', Validators.required),
         from_email: new FormControl('', [Validators.required, Validators.email]),
@@ -36,14 +34,22 @@ export class ContactPageComponent {
         message: new FormControl('', Validators.required),
     });
 
-    // emailjs.send("bim_fellow_id","template_rxxew8v",{
-    //     name: "Bimfellow",
-    //     message: "Testing email service",
-    //     title: "Test-1",
-    //     email: "postctester2@gmail.com",
-    //     });
-
     submitForm() {
-        // console.log(this.contactForm.value);
+        console.log(this.contactForm.value);
+        //To us
+        this.emailJsService.sendEmailToUs(
+            'Bimfellow',
+            this.contactForm.value.from_name,
+            this.contactForm.value.from_email,
+            'Contact',
+            this.contactForm.value.message,
+        );
+        // To user
+        this.emailJsService.sendEmailToUser(
+            this.contactForm.value.from_name,
+            this.contactForm.value.from_email,
+        );
+
+        this.contactForm.reset();
     }
 }
