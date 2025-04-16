@@ -1,9 +1,10 @@
 import { IMAGE_CONFIG, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'page-main-page',
-    imports: [NgOptimizedImage],
+    imports: [NgOptimizedImage, RouterModule],
     providers: [
         {
             provide: IMAGE_CONFIG,
@@ -19,4 +20,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     styleUrl: './main-page.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainPageComponent {}
+export class MainPageComponent {
+    private router = inject(Router);
+}

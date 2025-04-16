@@ -59,7 +59,7 @@
     .checkout-container {
         height: 100%;
         .checkout-body {
-            height: 80%;
+            height: 40rem;
             .checkout-title {
                 display: flex;
                 align-items: center;
