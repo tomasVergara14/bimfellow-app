@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/server",
+        "target": "es2015",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "lib": ["es2018", "dom"],
+        "declaration": true,
+        "sourceMap": true,
+        "skipLibCheck": true
+    },
+    "files": ["src/main.server.ts"],
+    "include": ["src/**/*.ts"]
+}
