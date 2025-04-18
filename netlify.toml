@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build:ssr"
+  command = "node scripts/create-env.js && npm run build:ssr"
   publish = "dist/bim-fellow-app/browser"
+
 
 [[plugins]]
   package = "@netlify/angular-runtime"
