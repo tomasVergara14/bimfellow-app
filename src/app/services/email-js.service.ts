@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import { environment } from 'src/environments/environments';
+import { environments } from 'src/environments/environments';
 
 @Injectable({
     providedIn: 'root',
@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environments';
 export class EmailJsService {
     constructor() {}
 
-    private config = environment;
+    private config = environments;
 
     async sendEmailToUs(
         to_name: string,

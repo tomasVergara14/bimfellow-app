@@ -8,7 +8,7 @@ import {
     Validators,
 } from '@angular/forms';
 
-import { environment } from 'src/environments/environments';
+import { environments } from 'src/environments/environments';
 import { env } from 'process';
 import { EmailJsService } from 'src/app/services/email-js.service';
 import { SweetalertService } from 'src/app/services/sweetalert.service';
