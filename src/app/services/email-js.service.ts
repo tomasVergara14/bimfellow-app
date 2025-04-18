@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import { environment } from '@env/environments';
+import { environment } from 'src/environments/environments';
 
 @Injectable({
     providedIn: 'root',
