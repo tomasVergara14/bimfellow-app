@@ -41,12 +41,4 @@ export class EmailJsService {
             email: userseMail,
         });
     }
-
-    // To us:
-
-    // To the user:
-    // emailjs.send("bim_fellow_id","template_z7lr2e3",{
-    //   name: "username",                        // users name
-    //   email: "tomasvergara272@gmail.com",      // users email
-    //   });
 }
