@@ -1,4 +1,3 @@
-// scripts/create-env.ts o .js (como prefieras)
 const fs = require('fs');
 const path = require('path');
 
