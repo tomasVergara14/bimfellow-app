@@ -4,11 +4,11 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve -o",
-        "build": "ng build --configuration production",
+        "build": "ng build",
+        "build:ssr": "ng build && ng run bim-fellow-app:server",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "serve:ssr:bim-fellow-app": "node dist/bim-fellow-app/server/server.mjs",
-        "build:ssr": "ng build && ng run bim-fellow-app:server"
+        "serve:ssr:bim-fellow-app": "node dist/bim-fellow-app/server/server.mjs"
     },
     "private": true,
     "dependencies": {
