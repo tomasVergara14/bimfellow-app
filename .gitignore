@@ -22,6 +22,7 @@ yarn-error.log
 
 /src/environments/environment.prod.ts
 /src/environments/environment.ts
+/src/environments
 
 
 # Visual Studio Code
