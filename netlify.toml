@@ -1,5 +1,6 @@
 [build]
-  command = "node scripts/create-env.js && npm run build:ssr"
+  secrets_scan_omit_keys = ["SERVICE_ID", "NOTIFICATION_TEMPLATE_ID", "PUBLIC_KEY", "RESPONSE_TEMPLATE_ID"]
+  command = "node scripts/create-env.js && npm run build:ssr"[build]
   publish = "dist/bim-fellow-app/browser"
 
 [functions]
