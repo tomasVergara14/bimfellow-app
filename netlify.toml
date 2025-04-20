@@ -1,7 +1,7 @@
 [build]
-  secrets_scan_omit_keys = ["SERVICE_ID", "NOTIFICATION_TEMPLATE_ID", "PUBLIC_KEY", "RESPONSE_TEMPLATE_ID"]
-  command = "node scripts/create-env.js && npm run build:ssr"[build]
+  command = "node scripts/create-env.js && npm run build:ssr"
   publish = "dist/bim-fellow-app/browser"
+  functions = "netlify/functions"
 
-[functions]
-  directory = "netlify/functions"
+[build.secrets]
+  secrets_scan_omit_keys = ["SERVICE_ID", "NOTIFICATION_TEMPLATE_ID", "PUBLIC_KEY", "RESPONSE_TEMPLATE_ID"]
