@@ -8,7 +8,7 @@ import {
     Validators,
 } from '@angular/forms';
 
-import { EmailJsService } from 'src/app/services/email-js.service';
+import { EmailJsService } from '../../services/email-js.service';
 import { SweetalertService } from 'src/app/services/sweetalert.service';
 
 @Component({
