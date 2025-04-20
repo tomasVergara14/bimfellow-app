@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 
 import { EmailJsService } from '../../services/email-js.service';
-import { SweetalertService } from 'src/app/services/sweetalert.service';
+import { SweetalertService } from '../../services/sweetalert.service';
 
 @Component({
     selector: 'page-contact-page',
