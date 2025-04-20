@@ -16,3 +16,8 @@ export const environment = {
 
 fs.writeFileSync(targetPath, envFileContent);
 console.log(`✔️ Environment file created at ${targetPath}`);
+console.log(process.env.SERVICE_ID);
+console.log(process.env.NOTIFICATION_TEMPLATE_ID);
+console.log(process.env.RESPONSE_TEMPLATE_ID);
+console.log(process.env.MAIL_BIMFELLOW);
+console.log(process.env.PUBLIC_KEY);
