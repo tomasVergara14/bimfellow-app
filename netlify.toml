@@ -4,6 +4,3 @@
 
 [build.environment]
   NODE_ENV = "production"
-
-[build.secrets]
-  secrets_scan_omit_keys = ["SERVICE_ID", "NOTIFICATION_TEMPLATE_ID", "RESPONSE_TEMPLATE_ID", "PUBLIC_KEY", "MAIL_BIMFELLOW"]
