@@ -1,8 +1,8 @@
 export const environment = {
     production: false,
-    SERVICE_ID: 'bim_fellow_id',
-    NOTIFICATION_TEMPLATE_ID: 'template_8h8jhox',
-    RESPONSE_TEMPLATE_ID: 'template_z7lr2e3',
-    MAIL_BIMFELLOW: 'postctester2@gmail.com',
-    PUBLIC_KEY: 'PUBLIC_KEY',
+    SERVICE_ID: process.env['SERVICE_ID'] || '',
+    NOTIFICATION_TEMPLATE_ID: process.env['NOTIFICATION_TEMPLATE_ID'] || '',
+    RESPONSE_TEMPLATE_ID: process.env['RESPONSE_TEMPLATE_ID'] || '',
+    MAIL_BIMFELLOW: process.env['MAIL_BIMFELLOW'] || '',
+    PUBLIC_KEY: process.env['PUBLIC_KEY'] || '',
 };
